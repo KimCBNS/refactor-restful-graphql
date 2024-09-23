@@ -31,13 +31,14 @@ import Navbar from './components/Navbar';
 
 // Initialize Apollo Client
 const client = new ApolloClient({
-  uri: 'http://localhost:3001/graphql', // GraphQL server URL
+  uri: '/graphql', // GraphQL server URL
   cache: new InMemoryCache(),
 });
 
 function App() {
   return (
     <ApolloProvider client={client}>
+    
       <Navbar />
       <div className="flex-column justify-center align-center min-100-vh bg-primary">
         <Outlet />

@@ -6,7 +6,7 @@ import { SIGNUP_USER } from '../graphql/mutations';
 import Auth from '../utils/auth';
 
 
-const [signupUser, { error }] = useMutation(SIGNUP_USER);
+//const [signupUser, { error }] = useMutation(SIGNUP_USER);
 
 const SignupForm = () => {
   // set initial form state
@@ -62,17 +62,17 @@ const SignupForm = () => {
       event.stopPropagation();
     }
   
-    try {
-      const { data } = await signupUser({ variables: { ...userFormData } });
+    // try {
+    //   const { data } = await signupUser({ variables: { ...userFormData } });
   
-      // Handle the token and user data
-      const { token, user } = data.signup; // Adjust based on your GraphQL response
-      console.log(user);
-      Auth.login(token);
-    } catch (err) {
-      console.error(err);
-      setShowAlert(true);
-    }
+    //   // Handle the token and user data
+    //   const { token, user } = data.signup; // Adjust based on your GraphQL response
+    //   console.log(user);
+    //   Auth.login(token);
+    // } catch (err) {
+    //   console.error(err);
+    //   setShowAlert(true);
+    // }
   
     setUserFormData({
       username: '',
